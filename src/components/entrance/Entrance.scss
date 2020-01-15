@@ -1,0 +1,16 @@
+.entrance {
+  margin: auto;
+  text-align: center;
+  .option {
+    padding: 20px;
+    border: none;
+    background-color: lightseagreen;
+    color: white;
+    box-shadow: 1px 1px 5px lightblue;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+    cursor: pointer;
+  }
+}

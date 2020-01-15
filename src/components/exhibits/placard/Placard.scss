@@ -1,0 +1,13 @@
+.placard {
+  background-color: gold;
+  border: solid 5px goldenrod;
+  border-radius: 5px;
+  color: black;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  .name {
+    margin-top: 0px;
+  }
+}
