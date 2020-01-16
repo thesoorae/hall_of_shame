@@ -1,7 +1,14 @@
 import React from "react";
-import Exhibit from "../Exhibit.js";
-import Placard from "../placard/Placard.js";
+import Exhibit from "./Exhibit.js";
+import Placard from "./placard/Placard.js";
 import "./Koch.scss";
+import styled, { keyframes } from "styled-components";
+import { slideInLeft } from "react-animations";
+
+const SwingAnimation = keyframes`${slideInLeft}`;
+const SwingDiv = styled.div`
+  animation: 2s ${SwingAnimation};
+`;
 export default class Koch extends React.Component {
   constructor(props) {
     super(props);
@@ -17,12 +24,12 @@ export default class Koch extends React.Component {
   }
 
   render() {
-    let classes = this.state.inView ? "slide-out" : "slide-in";
     return (
       <Exhibit className="d_koch">
-        <div className="image_container">
-          <img src="images/david_koch.png" classNames={` ${classes}`} />
-        </div>
+        <SwingDiv>
+          <img src="images/david_koch.png" />
+        </SwingDiv>
+
         <Placard name="David Koch" dates="1940-2019">
           David Koch worked tirelessly, over decades, to jettison from office
           any moderate Republicans who proposed to regulate greenhouse gases. In

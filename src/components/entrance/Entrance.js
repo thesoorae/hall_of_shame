@@ -1,5 +1,7 @@
 import React from "react";
-import Koch from "../exhibits/koch/Koch.js";
+import Koch from "../exhibits/Koch.js";
+import Inhofe from "../exhibits/Inhofe.js";
+import _ from "lodash";
 import "./Entrance.scss";
 export default class Entrance extends React.Component {
   constructor(props) {
@@ -10,8 +12,10 @@ export default class Entrance extends React.Component {
   }
 
   showRandom = () => {
+    const options = [1, 2];
+    let exhibit = _.shuffle(options)[0];
     this.setState({
-      exhibit: 1
+      exhibit: exhibit
     });
   };
 
@@ -20,6 +24,8 @@ export default class Entrance extends React.Component {
       switch (this.state.exhibit) {
         case 1:
           return <Koch />;
+        case 2:
+          return <Inhofe />;
       }
     }
   };
